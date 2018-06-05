@@ -1,0 +1,59 @@
+Jun-05 18:00:23.556 [main] DEBUG nextflow.cli.Launcher - $> ./nextflow -log .nextflow.brokenPipe.log run email-brokenPipe.nf
+Jun-05 18:00:23.689 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 0.29.0
+Jun-05 18:00:23.702 [main] INFO  nextflow.cli.CmdRun - Launching `email-brokenPipe.nf` [compassionate_lovelace] - revision: dc5fbf7e44
+Jun-05 18:00:23.797 [main] DEBUG nextflow.Session - Session uuid: 85c7bf4d-81bf-4ff9-98b1-498d0cf7f7d6
+Jun-05 18:00:23.797 [main] DEBUG nextflow.Session - Run name: compassionate_lovelace
+Jun-05 18:00:23.800 [main] DEBUG nextflow.Session - Executor pool size: 32
+Jun-05 18:00:23.817 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 0.29.0 build 4803
+  Modified: 24-04-2018 08:09 UTC (04:09 EDT)
+  System: Linux 2.6.32-642.11.1.el6.x86_64
+  Runtime: Groovy 2.4.15 on OpenJDK 64-Bit Server VM 1.8.0_171-b10
+  Encoding: UTF-8 (ANSI_X3.4-1968)
+  Process: 11657@phoenix2 [192.168.10.3]
+  CPUs: 32 - Mem: 126 GB (1.8 GB) - Swap: 244.1 GB (226.2 GB)
+Jun-05 18:00:23.972 [main] DEBUG nextflow.Session - Work-dir: /ifs/data/molecpathlab/development/demux-nf-demo2/test/work [nfs]
+Jun-05 18:00:23.972 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /ifs/data/molecpathlab/development/demux-nf-demo2/test/bin
+Jun-05 18:00:24.358 [main] DEBUG nextflow.Session - Session start invoked
+Jun-05 18:00:24.374 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jun-05 18:00:24.375 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jun-05 18:00:24.712 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-05 18:00:24.738 [main] DEBUG nextflow.Channel - files for syntax: glob; folder: email/attachments/; pattern: *; options: null
+Jun-05 18:00:26.007 [main] DEBUG nextflow.Session - Session aborted -- Cause: Broken pipe
+Jun-05 18:00:26.149 [main] ERROR nextflow.cli.Launcher - Broken pipe
+java.io.IOException: Broken pipe
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(FileOutputStream.java:326)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:95)
+	at com.sun.mail.util.QPEncoderStream.output(QPEncoderStream.java:197)
+	at com.sun.mail.util.QPEncoderStream.write(QPEncoderStream.java:140)
+	at com.sun.mail.util.QPEncoderStream.write(QPEncoderStream.java:95)
+	at javax.activation.DataHandler.writeTo(DataHandler.java:309)
+	at javax.mail.internet.MimeBodyPart.writeTo(MimeBodyPart.java:1485)
+	at javax.mail.internet.MimeBodyPart.writeTo(MimeBodyPart.java:865)
+	at javax.mail.internet.MimeMultipart.writeTo(MimeMultipart.java:462)
+	at com.sun.mail.handlers.multipart_mixed.writeTo(multipart_mixed.java:103)
+	at javax.activation.ObjectDataContentHandler.writeTo(DataHandler.java:889)
+	at javax.activation.DataHandler.writeTo(DataHandler.java:317)
+	at javax.mail.internet.MimeBodyPart.writeTo(MimeBodyPart.java:1485)
+	at javax.mail.internet.MimeMessage.writeTo(MimeMessage.java:1773)
+	at javax.mail.internet.MimeMessage.writeTo(MimeMessage.java:1749)
+	at nextflow.mail.Mailer.sendViaSysMail(Mailer.groovy:255)
+	at nextflow.mail.Mailer.send(Mailer.groovy:431)
+	at nextflow.mail.Mailer.send(Mailer.groovy:496)
+	at nextflow.mail.Mailer$send.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:128)
+	at nextflow.Nextflow.sendMail(Nextflow.groovy:385)
+	at nextflow.Nextflow$sendMail.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:55)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:197)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:209)
+	at _nf_script_00363170.run(_nf_script_00363170:13)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:341)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:165)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:223)
+	at nextflow.cli.Launcher.run(Launcher.groovy:428)
+	at nextflow.cli.Launcher.main(Launcher.groovy:582)

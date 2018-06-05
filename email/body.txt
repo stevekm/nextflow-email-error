@@ -1,0 +1,27 @@
+
+Pipeline execution summary
+---------------------------
+Success           : true
+exit status       : 0
+Launch time       : 04-Jun-2018 16:06:17
+Ending time       : 04-Jun-2018 16:36:38 (duration: 30m 21s)
+Launch directory  : /ifs/data/molecpathlab/development/demux-nf-demo2
+Work directory    : /ifs/data/molecpathlab/development/demux-nf-demo2/work
+Nextflow directory : /ifs/data/molecpathlab/development/demux-nf-demo2
+Run directory     : seq_dir
+Script name       : main.nf
+Script ID         : 2d2aa13f4f402e5136ffae53647cc918
+Workflow session  : 8129ead3-98ea-4eeb-9524-aaf9e603965c
+Workflow repo     : -
+Workflow revision : -
+Workflow profile  : phoenix,Archer
+Workflow container: -
+container engine  : -
+Nextflow run name : reverent_woese
+Nextflow version  : 0.29.0, build 4803 (24-04-2018 08:09 UTC)
+The command used to launch the workflow was as follows:
+nextflow run main.nf -resume -profile phoenix,Archer --runID demux-nf-demo2 --samplesheet SampleSheet.csv --run_dir seq_dir
+--
+This email was sent by Nextflow
+cite doi:10.1038/nbt.3820
+http://nextflow.io
